@@ -15,10 +15,10 @@
         <div v-html="">
           <img :src="item.srcs" :alt="index+1" class="bigImg">
           <div class="msgBox">
-            <h3 class="msgName" v-text="item.name"></h3>，<span>18</span>
-            <p class="msgSchool" v-text="item.school">珠海职业艺术学院</p>
+            <h3 class="msgName" v-text="item.name"></h3>，<span v-text="item.age" class="ageclass"></span>
+            <p class="msgSchool" >{{item.school}} <span class="trueclass">√</span></p>
           </div>
-          
+          <i class="bigAttention">★</i>
         </div>
       </li>
     </ul>
@@ -297,7 +297,7 @@ export default {
     position: relative;
     perspective: 9.259259rem;
     perspective-origin: 50% 150%;
-    -webkit-perspective: 50.259259rem;
+    -webkit-perspective: 35.259259rem;
     -webkit-perspective-origin: 50% 150%;
     margin: 0;
     padding: 0;
@@ -349,7 +349,7 @@ export default {
     box-sizing: border-box;
     font-family: '微软雅黑';
   }
-  .msgBox span{
+  .ageclass{
     color: #e680e4;
   }
   .msgName{
@@ -359,5 +359,33 @@ export default {
     padding-top: .30037rem;
     font-size: .351852rem;
     color: #9d9d9d;
+  }
+  .bigAttention{
+    position: absolute;
+    color: #fff;
+    bottom: 1.422963rem;
+    right: .62963rem;
+    width: 1.666667rem;
+    height: 1.666667rem;
+    font-size: 1.314815rem;
+    line-height: 1.566667rem;
+    display: block;
+    background-color: #4cc2ff;
+    border-radius: 50%;
+    font-style: normal;
+  }
+  .trueclass{
+    font-size: .205185rem;
+    font-weight: 900;
+    display: inline-block;
+    width: .305556rem;
+    height: .305556rem;
+    background-color: #48aeee;
+    color: #fff;
+    border-radius: 50%;
+    line-height: .325185rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: .026296rem;
+    box-sizing: border-box;
   }
 </style>

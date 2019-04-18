@@ -43,43 +43,50 @@ export default {
           // html: "<img :src='./assets/1.png' alt='01'>",
           srcs:require('../assets/1.png'),
           name:'东汉末年',
-          school:'珠海职业艺术学院'
+          school:'珠海职业艺术学院',
+          age:17
         },
         {
           // html: "<img :src=require('./img/1.png') alt='02'>",
           srcs:require('../assets/kksk.jpg'),
           name:'野兽',
-          school:'珠海职业艺术学院'
+          school:'珠海职业艺术学院',
+          age:24
         },
         {
           // html: "<img :src=require('./img/1.png') alt='03'>",
           srcs:require('../assets/3.png'),
           name:'嗯哼',
-          school:'巴黎圣母院'
+          school:'巴黎圣母院',
+          age:20
         },
         {
           // html: "<img :src=require('./img/1.png') alt='04'>",
           srcs:require('../assets/timg.jpg'),
           name:'坦克',
-          school:'珠海职业艺术学院'
+          school:'珠海职业艺术学院',
+          age:30
         },
         {
           // html: "<img :src=require('./img/1.png') alt='05'>",
           srcs:require('../assets/4.png'),
           name:'人烦得很',
-          school:'巴黎圣母院'
+          school:'巴黎圣母院',
+          age:22
         },
         {
           // html: "<img :src=require('./img/1.png') alt='06'>",
           srcs:require('../assets/5.png'),
           name:'一口价',
-          school:'珠海职业艺术学院'
+          school:'珠海职业艺术学院',
+          age:19
         },
         {
           // html: "<img :src=require('./img/1.png') alt='07'>",
           srcs:require('../assets/6.png'),
           name:'人烦得很',
-          school:'巴黎圣母院'
+          school:'巴黎圣母院',
+          age:25
         }
       ];
       document.getElementsByClassName('loadingImg')[0].style.display='none';
