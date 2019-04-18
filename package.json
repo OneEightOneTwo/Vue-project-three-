@@ -44,5 +44,17 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "description": "```\r npm install\r ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OneEightOneTwo/Vue-project-three-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OneEightOneTwo/Vue-project-three-/issues"
+  },
+  "homepage": "https://github.com/OneEightOneTwo/Vue-project-three-#readme"
 }

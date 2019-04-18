@@ -1,12 +1,17 @@
 <template>
   <div>
-    <p>我是第一个页面</p>
+    <xheader/>
+    <xlunbo/>
   </div>
 </template>
 <script>
+import Xheader from '../../components/Xheader.vue'
+import Xlunbo from '../../components/Xlunbotypes.vue'
 export default {
   name : "App",
   components: {
+    Xheader,
+    Xlunbo
   }
 };
 </script>
