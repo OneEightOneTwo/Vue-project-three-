@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="heads">
+    <div class="heads" @click="toPersonal">
       <div class="pic"></div>
       <p class="names" v-text="names"></p>
       <p class="edit" v-text="edit"></p>
@@ -13,7 +13,12 @@ export default {
     return {
       names: "梅雨明时",
       edit: "点击查看/编辑"
-    };
+    }
+  },
+  methods: {
+    toPersonal(){
+      this.$router.push({path: '/personal'})
+    }
   }
 };
 </script>

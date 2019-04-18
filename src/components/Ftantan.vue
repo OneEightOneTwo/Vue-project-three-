@@ -3,7 +3,7 @@
     <div id="app" class="box">
       <ul class="tabs clearfix">
         <li 
-        v-for="(tab,index) in tabsName">
+        v-for="(tab,index) in tabsName" :key="index">
           <a
             href="javascript:;"
             class="tab-link"
