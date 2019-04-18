@@ -32,7 +32,7 @@ const routes = [
     { path: '/friends', component: Friends, name: 'friends' },
     { path: '/Cryp', component: Cryp, name: 'Cryp' },
     { path: '/privilege', component: Privilege, name: 'privilege' },
-    { path: '/', redirect: '/home' }
+    { path: '/', redirect: '/home/one' }
 ]
 //实例化路由
 const router = new VueRouter({
