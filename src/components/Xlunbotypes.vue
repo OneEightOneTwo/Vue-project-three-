@@ -1,6 +1,7 @@
 <template>
   <div id="stack">
   <div class="mid-center">
+    <img src="../assets/timg (2).gif" alt="" class="loadingImg">
     <div class="stack-wrapper">
       <stack ref="stack" :pages="someList" :stackinit="stackinit"></stack>
       <!-- <img :src='require("./img/1.png")' alt='01'> -->
@@ -81,7 +82,8 @@ export default {
           school:'巴黎圣母院'
         }
       ];
-    }, 2000);
+      document.getElementsByClassName('loadingImg')[0].style.display='none';
+    }, 1100);
   },
   components: {
     stack
@@ -98,15 +100,19 @@ export default {
 </script>
 <style>
 .mid-center{
-  width: 9.148148rem;
   margin: auto;
   /* height: 14.74074rem; */
+}
+.loadingImg{
+  display: inline-block;
+  width: 100%;
+  margin-top: 2.362963rem;
 }
 .stack-wrapper {
   margin: 0 auto;
   position: relative;
   z-index: 1000;
-  /* width: 9.166667rem; */
+  width: 9.166667rem;
   height: 12.481481rem;
   padding: 0;
   list-style: none;
