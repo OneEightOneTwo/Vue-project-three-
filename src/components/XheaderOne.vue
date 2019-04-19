@@ -16,10 +16,10 @@ export default {
 
     methods: {
         lBack(){
-            alert('回退请充值！')
+            alert('回退到上一张请先充值！')
         },
         rAttention(){
-            alert('超级关注请充值！')
+            alert('超级关注请先充值！')
         }
         
     },

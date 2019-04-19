@@ -12,13 +12,21 @@
       @mouseout.stop.prevent="touchend"
       @webkit-transition-end="onTransitionEnd(index)"
       @transitionend="onTransitionEnd(index)">
-        <div v-html="">
+        <div>
           <img :src="item.srcs" :alt="index+1" class="bigImg">
           <div class="msgBox">
-            <h3 class="msgName" v-text="item.name"></h3>，<span v-text="item.age" class="ageclass"></span>
+            <h3 class="msgName ageclass" v-text="item.name"></h3>，<span v-text="item.age" :style="{color:sexColor(item.sex)}"></span>
             <p class="msgSchool" >{{item.school}} <span class="trueclass">√</span></p>
           </div>
-          <i class="bigAttention">★</i>
+          <i 
+          class="bigAttention"
+          @touchstart.stop.prevent="starStart"
+          @mousedown.stop.prevent="starStart"
+          @touchend.stop.prevent="starEnd"
+          @mouseup.stop.prevent="starEnd"
+          @touchcancel.stop.prevent="starEnd"
+          @mouseout.stop.prevent="starEnd"
+          >★</i>
         </div>
       </li>
     </ul>
@@ -59,7 +67,8 @@ export default {
         lastOpacity: 0,
         swipe: false,
         zIndex: 10
-      }
+      },
+      flag :false//判断当前鼠标是否点击超级关注的开关
     }
   },
   computed: {
@@ -84,6 +93,7 @@ export default {
     console.log(this.transformIndex)
   },
   mounted () {
+    
     // 绑定事件
     this.$on('next', () => {
       this.next()
@@ -92,6 +102,12 @@ export default {
       this.prev()
     })
     
+  },
+  watch:{
+    pages:function(){
+      console.log(this.pages[this.temporaryData.currentPage]);
+      // console.log(this.temporaryData.currentPage);
+    },
   },
   methods: {
     touchstart (e) {
@@ -152,8 +168,15 @@ export default {
       this.temporaryData.tracking = false
       this.temporaryData.animation = true
       // 滑动结束，触发判断
+      if(this.offsetRatio==0){//判断是否应该跳转(无拖拽)
+        if (e.type != 'mouseout'){//清除BUG（滑出也触发事件）
+          if(this.flag==false){//若鼠标没有点击超级关注则执行
+          console.log(this.flag);
+          }
+        }
+      }
       // 判断划出面积是否大于0.5
-      if (this.offsetRatio >= 0.5) {
+      else if (this.offsetRatio >= 0.5) {
         // 计算划出后最终位置
         let ratio = Math.abs(this.temporaryData.posheight / this.temporaryData.poswidth)
         this.temporaryData.poswidth = this.temporaryData.poswidth >= 0 ? this.temporaryData.poswidth + 200 : this.temporaryData.poswidth - 200
@@ -293,9 +316,20 @@ export default {
         return style
       }
     },
-    styleIndex(){
-      console.log(this.index);
-    }
+    sexColor(val){
+      if(val=='男'){
+        return '#64abf9'
+      }else{
+        return '#e680e4'
+      }
+    },
+    starStart(){//蓝色超级关注的点击事件
+      this.flag=true;
+      alert('超级关注请先充值！')
+    },
+    starEnd(){
+      this.flag=false;
+    },
   }
 }
 </script>
@@ -357,9 +391,6 @@ export default {
     padding-top: .497037rem;
     box-sizing: border-box;
     font-family: '微软雅黑';
-  }
-  .ageclass{
-    color: #e680e4;
   }
   .msgName{
     display: inline-block;
