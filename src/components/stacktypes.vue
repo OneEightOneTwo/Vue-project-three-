@@ -90,7 +90,7 @@ export default {
     }
   },
   created() {
-    console.log(this.transformIndex)
+    // console.log(this.transformIndex)
   },
   mounted () {
     
@@ -105,7 +105,12 @@ export default {
   },
   watch:{
     pages:function(){
+<<<<<<< HEAD
       console.log(this.pages[this.temporaryData.currentPage]);
+=======
+      // console.log(this.pages[this.temporaryData.currentPage].name);
+      // console.log(this.temporaryData.currentPage);
+>>>>>>> d71a1e9591cf76d94eeba7c497096dee651130ac
     },
   },
   methods: {
@@ -167,10 +172,10 @@ export default {
       this.temporaryData.tracking = false
       this.temporaryData.animation = true
       // 滑动结束，触发判断
-      if(this.offsetRatio==0){//判断是否应该跳转(无拖拽)
+      if(this.offsetRatio==0){//判断是否应该跳转(点击无拖拽)
         if (e.type != 'mouseout'){//清除BUG（滑出也触发事件）
           if(this.flag==false){//若鼠标没有点击超级关注则执行
-          console.log(this.flag);
+          this.$router.push(  { path: '/details',query:{stkData:this.pages[this.temporaryData.currentPage].name}},)
           }
         }
       }
