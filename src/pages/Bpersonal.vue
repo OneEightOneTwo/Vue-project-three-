@@ -1,11 +1,19 @@
 <template>
   <div>
     <div class="p_top">
-      <i class="iconfont" @click="tofriend">&#xe604;</i>
-      <span>个人资料</span>
-      <em class="iconfont" @click="toBpresonal">&#xe639;</em>
+      <i class="iconfont" @click="topersonal">&#xe604;</i>
+      <span>编辑个人资料</span>
     </div>
-    <p class="touxiang"></p>
+    <div class="touxiang">
+        <ul class="rank">
+            <li class="frist"><a href="javascript:;"></a></li>
+            <li><a href="javascript:;"></a></li>
+            <li><a href="javascript:;"></a></li>
+            <li><a href="javascript:;"></a></li>
+            <li><a href="javascript:;"></a></li>
+            <li><a href="javascript:;"></a></li>
+        </ul>
+    </div>
     <div class="byline">
       <h2 class="names">梅雨明时</h2>
       <p class="tt">
@@ -14,24 +22,22 @@
       </p>
       <p class="mins">0m,2分前活跃</p>
     </div>
-    <div class="student">
-      <i class="iconfont">&#xe669;</i>
-      <p>点击认证学生身份</p>
-    </div>
     <div class="idiograph">
-        <span>个人签名</span>
-        <p><i class="iconfont">&#xe696;</i>初听不知曲中意，再听已是曲中人</p>
+      <span>个人签名</span>
+      <p>
+        <i class="iconfont">&#xe696;</i>初听不知曲中意，再听已是曲中人
+      </p>
+    </div>
+    <div class="mine_mes">
+        
     </div>
   </div>
 </template>
 <script>
 export default {
     methods: {
-        tofriend(){
-            this.$router.push( { path: 'home/four'});
-        },
-        toBpresonal(){
-            this.$router.push({ path: 'Bpersonal'})
+        topersonal(){
+            this.$router.push({ path: '/personal'})
         }
     }
 };
@@ -53,30 +59,34 @@ export default {
 }
 .p_top i {
   color: #ffffff;
-  font-size: 0.555556rem;
+  font-size: .648148rem;
   height: 1.574074rem;
   line-height: 1.574074rem;
   margin-left: 0.740741rem;
-  margin-right: 1.351852rem;
-}
-.p_top em {
-  margin-right: 0.712963rem;
-  float: right;
-  color: #ffffff;
-  font-size: 0.555556rem;
-  height: 1.574074rem;
+  margin-right: 1.342593rem;
 }
 .touxiang {
   width: 100%;
-  height: 13.361111rem;
-  background: url(../assets/touxiang2.jpg) no-repeat top center;
-  background-size: cover;
+  height: 9.416667rem;
+}
+.touxiang .rank .frist{
+    width: 6.011111rem;
+    height: 6.011111rem;
+    background: burlywood;
+    margin-right: .277778rem;
+}
+.touxiang .rank>li{
+    margin: .046296rem;
+    float: left;
+    width: 3.066667rem;
+    height: 3.066667rem;
+    background: #f6f6f6;
 }
 .byline {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 3.981481rem;
+  height: 2.981481rem;
   justify-content: center;
   padding-left: 0.398148rem;
   box-sizing: border-box;
@@ -117,45 +127,25 @@ export default {
   color: #b9b9b9;
   font-size: 0.444444rem;
 }
-.student {
-  width: 100%;
-  height: 1.481481rem;
-  background: #5bcee0;
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-  border-top: 0.027778rem solid #e3e3e3;
+.idiograph {
+  height: 3.722222rem;
   border-bottom: 0.027778rem solid #e3e3e3;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.611111rem;
   box-sizing: border-box;
+  justify-content: space-around;
 }
-.student i {
-  margin-left: 0.601852rem;
-  margin-right: 0.324074rem;
-  font-size: 0.925926rem;
+.idiograph > span {
+  font-size: 0.5rem;
+  color: #d1462f;
 }
-.student p {
-  font-size: 0.462963rem;
+.idiograph > p {
+  font-size: 0.5rem;
+  color: #000000;
 }
-.idiograph{
-    height: 4.722222rem;
-    border-bottom: .027778rem solid #e3e3e3;
-    display: flex;
-    flex-direction: column;
-    padding-left: .611111rem;
-    box-sizing: border-box;
-    justify-content: space-around;
-}
-.idiograph >span{
-    font-size: .5rem;
-    color:#d1462f;
-}
-.idiograph >p{
-    font-size: .5rem;
-    color:#000000;
-}
-.idiograph >p>i{
-    font-size: .62963rem;
-    margin-right:1.25rem;
+.idiograph > p > i {
+  font-size: 0.62963rem;
+  margin-right: 0.55rem;
 }
 </style>
-

@@ -16,9 +16,12 @@ import Friends from './pages/Xfriends.vue'
 import Cryp from './pages/Cryp.vue'
 //激活特权页面
 import Privilege from './pages/Privilege.vue'
-//个人信息编辑页面
+//个人信息页面
 import Personal from './pages/Personal.vue'
-
+//个人信息编辑页面
+import Bpersonal from './pages/Bpersonal.vue'
+//登录页面
+import Login from './pages/Login.vue'
 
 //定义路由
 const routes = [
@@ -35,10 +38,9 @@ const routes = [
     { path: '/friends', component: Friends, name: 'friends' },
     { path: '/Cryp', component: Cryp, name: 'Cryp' },
     { path: '/privilege', component: Privilege, name: 'privilege' },
-<<<<<<< HEAD
+    { path: '/bpersonal', component: Bpersonal, name: 'bpersonal' },
+    { path: '/login', component: Login, name: 'login' },
     { path: '/personal', component: Personal, name: 'personal' },
-=======
->>>>>>> c0683a20d9dcb8bb9cc87679c302709da42bfc04
     { path: '/', redirect: '/home/one' }
 ]
 //实例化路由
