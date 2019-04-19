@@ -80,6 +80,9 @@ export default {
       return ratio
     }
   },
+  created() {
+    console.log(this.transformIndex)
+  },
   mounted () {
     // 绑定事件
     this.$on('next', () => {
@@ -88,6 +91,7 @@ export default {
     this.$on('prev', () => {
       this.prev()
     })
+    
   },
   methods: {
     touchstart (e) {
@@ -274,6 +278,7 @@ export default {
       return style
     },
     // 首页样式切换
+    
     transformIndex (index) {
       if (index === this.temporaryData.currentPage) {
         let style = {}
@@ -284,8 +289,12 @@ export default {
           style[this.temporaryData.prefixes.transition + 'TimingFunction'] = 'ease'
           style[this.temporaryData.prefixes.transition + 'Duration'] = (this.temporaryData.animation ? 300 : 0) + 'ms'
         }
+        // console.log(index)
         return style
       }
+    },
+    styleIndex(){
+      console.log(this.index);
     }
   }
 }
@@ -367,10 +376,10 @@ export default {
     right: .62963rem;
     width: 1.666667rem;
     height: 1.666667rem;
-    font-size: 1.314815rem;
+    font-size: 1.324815rem;
     line-height: 1.566667rem;
     display: block;
-    background-color: #4cc2ff;
+    background: linear-gradient(45deg, #26aff7, #80d8fc);
     border-radius: 50%;
     font-style: normal;
   }

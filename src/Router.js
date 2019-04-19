@@ -35,7 +35,10 @@ const routes = [
     { path: '/friends', component: Friends, name: 'friends' },
     { path: '/Cryp', component: Cryp, name: 'Cryp' },
     { path: '/privilege', component: Privilege, name: 'privilege' },
+<<<<<<< HEAD
     { path: '/personal', component: Personal, name: 'personal' },
+=======
+>>>>>>> c0683a20d9dcb8bb9cc87679c302709da42bfc04
     { path: '/', redirect: '/home/one' }
 ]
 //实例化路由
