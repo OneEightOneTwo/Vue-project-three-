@@ -16,6 +16,10 @@ import Friends from './pages/Xfriends.vue'
 import Cryp from './pages/Cryp.vue'
 //激活特权页面
 import Privilege from './pages/Privilege.vue'
+// 聊天详情页
+import Detail from './pages/Detail.vue'
+// 搜索页面
+import Search from './pages/Search.vue'
 
 //定义路由
 const routes = [
@@ -32,7 +36,9 @@ const routes = [
     { path: '/friends', component: Friends, name: 'friends' },
     { path: '/Cryp', component: Cryp, name: 'Cryp' },
     { path: '/privilege', component: Privilege, name: 'privilege' },
-    { path: '/', redirect: '/home' }
+    { path: '/detail/:id', component: Detail, name: "detail" },
+    { path: '/search', component: Search, name: "search" },
+    { path: '/', redirect: '/home/one' }
 ]
 //实例化路由
 const router = new VueRouter({
