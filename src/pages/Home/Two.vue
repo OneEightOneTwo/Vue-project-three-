@@ -1,12 +1,15 @@
 <template>
   <div>
-    <p>我是第二个页面</p>
+    <Communicate/>
   </div>
 </template>
 <script>
+import Communicate from "../../components/Communicate.vue";
 export default {
-  name: "App",
-  components: {}
+  name: "app",
+  components: {
+    Communicate,
+  }
 };
 </script>
 <style scoped>

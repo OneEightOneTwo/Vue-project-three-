@@ -23,7 +23,11 @@ import Bpersonal from './pages/Bpersonal.vue'
 //登录页面
 import Login from './pages/Login.vue'
 //one详情页
-import Details from './pages/Details.vue'
+import msgDetails from './pages/msgDetails.vue'
+// 聊天详情页
+import Detail from './pages/Detail.vue'
+// 搜索页面
+import Search from './pages/Search.vue'
 
 //定义路由
 const routes = [
@@ -43,7 +47,7 @@ const routes = [
     { path: '/bpersonal', component: Bpersonal, name: 'bpersonal' },
     { path: '/login', component: Login, name: 'login' },
     { path: '/personal', component: Personal, name: 'personal' },
-    { path: '/details', component: Details, name: 'details' },
+    { path: '/msgdetails', component: msgDetails, name: 'msgdetails' },
     { path: '/', redirect: '/home/one' }
 ]
 //实例化路由
