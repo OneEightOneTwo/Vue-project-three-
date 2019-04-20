@@ -13,7 +13,7 @@
       @webkit-transition-end="onTransitionEnd(index)"
       @transitionend="onTransitionEnd(index)">
         <div>
-          <img :src="item.srcs" :alt="index+1" class="bigImg">
+          <img :src="item.srcs[0]" :alt="index+1" class="bigImg">
           <div class="msgBox">
             <h3 class="msgName ageclass" v-text="item.name"></h3>，<span v-text="item.age" :style="{color:sexColor(item.sex)}"></span>
             <p class="msgSchool" >{{item.school}} <span class="trueclass">√</span></p>
@@ -37,7 +37,7 @@ export default {
   props: {
     stackinit: {
       type: Object,
-      default: []
+      default: ()=>{[]}
     },
     pages: {
       // type: Array,
@@ -171,7 +171,12 @@ export default {
       if(this.offsetRatio==0){//判断是否应该跳转(点击无拖拽)
         if (e.type != 'mouseout'){//清除BUG（滑出也触发事件）
           if(this.flag==false){//若鼠标没有点击超级关注则执行
-          this.$router.push(  { path: '/details',query:{stkData:this.pages[this.temporaryData.currentPage].name}},)
+          this.$router.push(  { path: '/msgdetails',query:{
+            stkImgs:this.pages[this.temporaryData.currentPage].srcs,
+            stkName:this.pages[this.temporaryData.currentPage].name,
+            stkName:this.pages[this.temporaryData.currentPage].sex,
+            stkName:this.pages[this.temporaryData.currentPage].stella,
+            }},)
           }
         }
       }

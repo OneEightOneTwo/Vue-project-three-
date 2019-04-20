@@ -41,59 +41,89 @@ export default {
       that.someList = [
         {
           // html: "<img :src='./assets/1.png' alt='01'>",
-          srcs:require('../assets/1.png'),
+          srcs:[
+            require('../assets/1.png'),
+            require('../assets/1.jpg'),
+          ],
           name:'东汉末年',
           school:'珠海职业艺术学院',
           age:17,
-          sex:'男'
+          sex:'男',
+          stella:'射手座'
         },
         {
           // html: "<img :src=require('./img/1.png') alt='02'>",
-          srcs:require('../assets/kksk.jpg'),
+          srcs:[
+            require('../assets/kksk.jpg'),
+            require('../assets/2.jpg'),
+            require('../assets/2.png'),
+            ],
           name:'野兽',
           school:'珠海职业艺术学院',
           age:24,
-          sex:'男'
+          sex:'男',
+          stella:'天蝎座'
         },
         {
           // html: "<img :src=require('./img/1.png') alt='03'>",
-          srcs:require('../assets/3.png'),
+          srcs:[
+            require('../assets/3.png'),
+            require('../assets/3.jpg'),
+            ],
           name:'嗯哼',
           school:'巴黎圣母院',
           age:20,
-          sex:'女'
+          sex:'女',
+          stella:'射手座'
         },
         {
           // html: "<img :src=require('./img/1.png') alt='04'>",
-          srcs:require('../assets/timg.jpg'),
+          srcs:[
+            require('../assets/timg.jpg'),
+            require('../assets/2.png'),
+            require('../assets/2.jpg'),
+            ],
           name:'坦克',
           school:'珠海职业艺术学院',
           age:30,
-          sex:'女'
+          sex:'女',
+          stella:'双子座'
         },
         {
           // html: "<img :src=require('./img/1.png') alt='05'>",
-          srcs:require('../assets/4.png'),
+          srcs:[
+            require('../assets/4.png'),
+            require('../assets/3.jpg'),
+            ],
           name:'人烦得很',
           school:'巴黎圣母院',
           age:22,
-          sex:'女'
+          sex:'女',
+          stella:'双鱼座'
         },
         {
           // html: "<img :src=require('./img/1.png') alt='06'>",
-          srcs:require('../assets/5.png'),
+          srcs:[
+            require('../assets/5.png'),
+            require('../assets/5.jpg'),
+            ],
           name:'一口价',
           school:'珠海职业艺术学院',
           age:19,
-          sex:'男'
+          sex:'男',
+          stella:'天蝎座'
         },
         {
           // html: "<img :src=require('./img/1.png') alt='07'>",
-          srcs:require('../assets/6.png'),
+          srcs:[
+            require('../assets/6.png'),
+            require('../assets/6.jpg'),
+            ],
           name:'人烦得很',
           school:'巴黎圣母院',
           age:25,
-          sex:'女'
+          sex:'女',
+          stella:'处女座'
         }
       ];
       document.getElementsByClassName('loadingImg')[0].style.display='none';
