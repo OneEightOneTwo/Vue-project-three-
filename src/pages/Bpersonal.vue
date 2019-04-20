@@ -1,45 +1,62 @@
 <template>
   <div>
     <div class="p_top">
-      <i class="iconfont" @click="topersonal">&#xe604;</i>
-      <span>编辑个人资料</span>
+      <i class="iconfont" @click="topersonal" v-html="p_top.p_icon"></i>
+      <span v-text="p_top.p_span"></span>
     </div>
     <div class="touxiang">
-        <ul class="rank">
-            <li class="frist"><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-        </ul>
+      <ul class="rank">
+        <li class="frist">
+          <a href="javascript:;"></a>
+        </li>
+        <li>
+          <a href="javascript:;"></a>
+        </li>
+        <li>
+          <a href="javascript:;"></a>
+        </li>
+        <li>
+          <a href="javascript:;"></a>
+        </li>
+        <li>
+          <a href="javascript:;"></a>
+        </li>
+        <li>
+          <a href="javascript:;"></a>
+        </li>
+      </ul>
     </div>
     <div class="byline">
-      <h2 class="names">梅雨明时</h2>
+      <h2 class="names" v-text="names"></h2>
       <p class="tt">
-        <span class="age">22</span>
-        <span class="conste">双子座</span>
+        <span class="age" v-text="age"></span>
+        <span class="conste" v-text="conste"></span>
       </p>
-      <p class="mins">0m,2分前活跃</p>
+      <p class="mins"></p>
     </div>
     <div class="idiograph">
-      <span>个人签名</span>
-      <p>
-        <i class="iconfont">&#xe696;</i>初听不知曲中意，再听已是曲中人
+      <span v-text="idiograph.gexing"></span>
+      <p v-text="idiograph.p">
+        <i class="iconfont">&#xe696;</i>
       </p>
     </div>
-    <div class="mine_mes">
-        
-    </div>
+    <div class="mine_mes"></div>
   </div>
 </template>
 <script>
 export default {
-    methods: {
-        topersonal(){
-            this.$router.push({ path: '/personal'})
-        }
+  data () {
+    return {
+      p_top : {p_icon : "&#xe604;" ,p_span:"编辑个人资料"},
+      names : "梅雨明时",age : "22",conste : "双子座",mins : "0m,2分前活跃",
+      idiograph : {gexing: "个性签名",p : "初听不知曲中意，再听已是曲中人"}
     }
+  },
+  methods: {
+    topersonal() {
+      this.$router.push({ path: "/personal" });
+    }
+  },
 };
 </script>
 <style scoped>
@@ -59,7 +76,7 @@ export default {
 }
 .p_top i {
   color: #ffffff;
-  font-size: .648148rem;
+  font-size: 0.648148rem;
   height: 1.574074rem;
   line-height: 1.574074rem;
   margin-left: 0.740741rem;
@@ -69,18 +86,18 @@ export default {
   width: 100%;
   height: 9.416667rem;
 }
-.touxiang .rank .frist{
-    width: 6.011111rem;
-    height: 6.011111rem;
-    background: burlywood;
-    margin-right: .277778rem;
+.touxiang .rank .frist {
+  width: 6.011111rem;
+  height: 6.011111rem;
+  background: burlywood;
+  margin-right: 0.277778rem;
 }
-.touxiang .rank>li{
-    margin: .046296rem;
-    float: left;
-    width: 3.066667rem;
-    height: 3.066667rem;
-    background: #f6f6f6;
+.touxiang .rank > li {
+  margin: 0.046296rem;
+  float: left;
+  width: 3.066667rem;
+  height: 3.066667rem;
+  background: #f6f6f6;
 }
 .byline {
   display: flex;

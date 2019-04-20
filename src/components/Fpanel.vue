@@ -3,15 +3,15 @@
     <div class="box">
       <div class="vip" @click="toprivilege">
         <div class="v_left">
-          <i class="iconfont">&#xe619;</i>
+          <i class="iconfont" v-html="vip.icon"></i>
           <div class="text">
-            <p class="tt">探探VIP</p>
-            <p class="huoqu">获取会员特权</p>
+            <p class="tt" v-text="vip.tt"></p>
+            <p class="huoqu" v-text="vip.huoqu"></p>
           </div>
         </div>
         <div class="v_right">
-          <span>激活特权</span>
-          <i class="iconfont">&#xe603;</i>
+          <span v-text="vip.spa"></span>
+          <i class="iconfont" v-html="vip.icon2"></i>
         </div>
       </div>
       <div class="set">
@@ -56,11 +56,19 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      vip: {
+        icon: "&#xe619;",
+        tt: "探探VIP",
+        huoqu: "获取会员特权",
+        spa: "激活特权",
+        icon2: "&#xe603;"
+      }
+    };
   },
   methods: {
-    toprivilege(){
-      this.$router.push(  { path: '/privilege'},)
+    toprivilege() {
+      this.$router.push({ path: "/privilege" });
     }
   }
 };
@@ -74,7 +82,6 @@ export default {
   width: 100%;
   background: #f7f7f7;
   margin-bottom: 1.388889rem;
-
 }
 /* vip */
 .vip {

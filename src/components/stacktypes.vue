@@ -105,12 +105,7 @@ export default {
   },
   watch:{
     pages:function(){
-<<<<<<< HEAD
       console.log(this.pages[this.temporaryData.currentPage]);
-=======
-      // console.log(this.pages[this.temporaryData.currentPage].name);
-      // console.log(this.temporaryData.currentPage);
->>>>>>> d71a1e9591cf76d94eeba7c497096dee651130ac
     },
   },
   methods: {

@@ -147,8 +147,9 @@ export default {
   justify-content: space-between;
 }
 #warp .header {
+  display: flex;
+  flex-direction: column;
   height: 5.185185rem;
-  background: orange;
 }
 .p_top {
   width: 100%;
