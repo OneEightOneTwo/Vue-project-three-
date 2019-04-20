@@ -105,7 +105,6 @@ export default {
   },
   watch:{
     pages:function(){
-      console.log(this.pages[this.temporaryData.currentPage]);
     },
   },
   methods: {
@@ -173,8 +172,10 @@ export default {
           this.$router.push(  { path: '/msgdetails',query:{
             stkImgs:this.pages[this.temporaryData.currentPage].srcs,
             stkName:this.pages[this.temporaryData.currentPage].name,
-            stkName:this.pages[this.temporaryData.currentPage].sex,
-            stkName:this.pages[this.temporaryData.currentPage].stella,
+            stkSex:this.pages[this.temporaryData.currentPage].sex,
+            stkStella:this.pages[this.temporaryData.currentPage].stella,
+            stkAge:this.pages[this.temporaryData.currentPage].age,
+            stkSchool:this.pages[this.temporaryData.currentPage].school,
             }},)
           }
         }
