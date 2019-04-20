@@ -4,64 +4,71 @@
       <i class="iconfont" @click="topersonal" v-html="p_top.p_icon"></i>
       <span v-text="p_top.p_span"></span>
     </div>
-    <div class="touxiang">
-      <ul class="rank">
-        <li class="frist">
-          <a href="javascript:;"></a>
-        </li>
-        <li>
-          <a href="javascript:;"></a>
-        </li>
-        <li>
-          <a href="javascript:;"></a>
-        </li>
-        <li>
-          <a href="javascript:;"></a>
-        </li>
-        <li>
-          <a href="javascript:;"></a>
-        </li>
-        <li>
-          <a href="javascript:;"></a>
-        </li>
-      </ul>
+    <div class="main">
+      <div class="touxiang">
+        <ul class="rank">
+          <li class="frist">
+            <a href="javascript:;"></a>
+          </li>
+          <li>
+            <a href="javascript:;"></a>
+          </li>
+          <li>
+            <a href="javascript:;"></a>
+          </li>
+          <li>
+            <a href="javascript:;"></a>
+          </li>
+          <li>
+            <a href="javascript:;"></a>
+          </li>
+          <li>
+            <a href="javascript:;"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="byline">
+        <h2 class="names" v-text="names"></h2>
+        <p class="tt">
+          <span class="age" v-text="age"></span>
+          <span class="conste" v-text="conste"></span>
+        </p>
+        <p class="mins"></p>
+      </div>
+      <div class="idiograph">
+        <span v-text="idiograph.gexing"></span>
+        <p v-text="idiograph.p">
+          <i class="iconfont">&#xe696;</i>
+        </p>
+      </div>
+      <div class="mine_mes"></div>
     </div>
-    <div class="byline">
-      <h2 class="names" v-text="names"></h2>
-      <p class="tt">
-        <span class="age" v-text="age"></span>
-        <span class="conste" v-text="conste"></span>
-      </p>
-      <p class="mins"></p>
-    </div>
-    <div class="idiograph">
-      <span v-text="idiograph.gexing"></span>
-      <p v-text="idiograph.p">
-        <i class="iconfont">&#xe696;</i>
-      </p>
-    </div>
-    <div class="mine_mes"></div>
   </div>
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
-      p_top : {p_icon : "&#xe604;" ,p_span:"编辑个人资料"},
-      names : "梅雨明时",age : "22",conste : "双子座",mins : "0m,2分前活跃",
-      idiograph : {gexing: "个性签名",p : "初听不知曲中意，再听已是曲中人"}
-    }
+      p_top: { p_icon: "&#xe604;", p_span: "编辑个人资料" },
+      names: "梅雨明时",
+      age: "22",
+      conste: "双子座",
+      mins: "0m,2分前活跃",
+      idiograph: { gexing: "个性签名", p: "初听不知曲中意，再听已是曲中人" }
+    };
   },
   methods: {
     topersonal() {
       this.$router.push({ path: "/personal" });
     }
-  },
+  }
 };
 </script>
 <style scoped>
 .p_top {
   width: 100%;
+  position: fixed;
+  top: 0;
   height: 1.574074rem;
   background: -webkit-gradient(
     linear,
@@ -85,6 +92,7 @@ export default {
 .touxiang {
   width: 100%;
   height: 9.416667rem;
+  margin-top: 1.574074rem;
 }
 .touxiang .rank .frist {
   width: 6.011111rem;
