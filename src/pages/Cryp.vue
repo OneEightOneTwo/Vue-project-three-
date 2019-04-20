@@ -44,7 +44,13 @@ export default {
   position: relative;
   width: 100%;
   height: 1.574074rem;
-  background: #d46514;
+   background: -webkit-gradient(
+    linear,
+    100% 0,
+    0 100%,
+    from(#d56815),
+    to(#c32d15)
+  );
 }
 .f_top .niname {
   display: inline-block;

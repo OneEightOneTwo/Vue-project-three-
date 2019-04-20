@@ -12,13 +12,21 @@
       @mouseout.stop.prevent="touchend"
       @webkit-transition-end="onTransitionEnd(index)"
       @transitionend="onTransitionEnd(index)">
-        <div v-html="">
+        <div>
           <img :src="item.srcs" :alt="index+1" class="bigImg">
           <div class="msgBox">
-            <h3 class="msgName" v-text="item.name"></h3>，<span v-text="item.age" class="ageclass"></span>
+            <h3 class="msgName ageclass" v-text="item.name"></h3>，<span v-text="item.age" :style="{color:sexColor(item.sex)}"></span>
             <p class="msgSchool" >{{item.school}} <span class="trueclass">√</span></p>
           </div>
-          <i class="bigAttention">★</i>
+          <i 
+          class="bigAttention"
+          @touchstart.stop.prevent="starStart"
+          @mousedown.stop.prevent="starStart"
+          @touchend.stop.prevent="starEnd"
+          @mouseup.stop.prevent="starEnd"
+          @touchcancel.stop.prevent="starEnd"
+          @mouseout.stop.prevent="starEnd"
+          >★</i>
         </div>
       </li>
     </ul>
@@ -59,7 +67,8 @@ export default {
         lastOpacity: 0,
         swipe: false,
         zIndex: 10
-      }
+      },
+      flag :false//判断当前鼠标是否点击超级关注的开关
     }
   },
   computed: {
@@ -80,7 +89,11 @@ export default {
       return ratio
     }
   },
+  created() {
+    // console.log(this.transformIndex)
+  },
   mounted () {
+    
     // 绑定事件
     this.$on('next', () => {
       this.next()
@@ -88,6 +101,17 @@ export default {
     this.$on('prev', () => {
       this.prev()
     })
+    
+  },
+  watch:{
+    pages:function(){
+<<<<<<< HEAD
+      console.log(this.pages[this.temporaryData.currentPage]);
+=======
+      // console.log(this.pages[this.temporaryData.currentPage].name);
+      // console.log(this.temporaryData.currentPage);
+>>>>>>> d71a1e9591cf76d94eeba7c497096dee651130ac
+    },
   },
   methods: {
     touchstart (e) {
@@ -148,8 +172,15 @@ export default {
       this.temporaryData.tracking = false
       this.temporaryData.animation = true
       // 滑动结束，触发判断
+      if(this.offsetRatio==0){//判断是否应该跳转(点击无拖拽)
+        if (e.type != 'mouseout'){//清除BUG（滑出也触发事件）
+          if(this.flag==false){//若鼠标没有点击超级关注则执行
+          this.$router.push(  { path: '/details',query:{stkData:this.pages[this.temporaryData.currentPage].name}},)
+          }
+        }
+      }
       // 判断划出面积是否大于0.5
-      if (this.offsetRatio >= 0.5) {
+      else if (this.offsetRatio >= 0.5) {
         // 计算划出后最终位置
         let ratio = Math.abs(this.temporaryData.posheight / this.temporaryData.poswidth)
         this.temporaryData.poswidth = this.temporaryData.poswidth >= 0 ? this.temporaryData.poswidth + 200 : this.temporaryData.poswidth - 200
@@ -274,6 +305,7 @@ export default {
       return style
     },
     // 首页样式切换
+    
     transformIndex (index) {
       if (index === this.temporaryData.currentPage) {
         let style = {}
@@ -284,9 +316,24 @@ export default {
           style[this.temporaryData.prefixes.transition + 'TimingFunction'] = 'ease'
           style[this.temporaryData.prefixes.transition + 'Duration'] = (this.temporaryData.animation ? 300 : 0) + 'ms'
         }
+        // console.log(index)
         return style
       }
-    }
+    },
+    sexColor(val){
+      if(val=='男'){
+        return '#64abf9'
+      }else{
+        return '#e680e4'
+      }
+    },
+    starStart(){//蓝色超级关注的点击事件
+      this.flag=true;
+      alert('超级关注请先充值！')
+    },
+    starEnd(){
+      this.flag=false;
+    },
   }
 }
 </script>
@@ -349,9 +396,6 @@ export default {
     box-sizing: border-box;
     font-family: '微软雅黑';
   }
-  .ageclass{
-    color: #e680e4;
-  }
   .msgName{
     display: inline-block;
   }
@@ -367,10 +411,10 @@ export default {
     right: .62963rem;
     width: 1.666667rem;
     height: 1.666667rem;
-    font-size: 1.314815rem;
+    font-size: 1.324815rem;
     line-height: 1.566667rem;
     display: block;
-    background-color: #4cc2ff;
+    background: linear-gradient(45deg, #26aff7, #80d8fc);
     border-radius: 50%;
     font-style: normal;
   }

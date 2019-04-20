@@ -36,8 +36,10 @@ const routes = [
     { path: '/friends', component: Friends, name: 'friends' },
     { path: '/Cryp', component: Cryp, name: 'Cryp' },
     { path: '/privilege', component: Privilege, name: 'privilege' },
-    { path: '/detail/:id', component: Detail, name: "detail" },
-    { path: '/search', component: Search, name: "search" },
+    { path: '/bpersonal', component: Bpersonal, name: 'bpersonal' },
+    { path: '/login', component: Login, name: 'login' },
+    { path: '/personal', component: Personal, name: 'personal' },
+    { path: '/details', component: Details, name: 'details' },
     { path: '/', redirect: '/home/one' }
 ]
 //实例化路由
