@@ -18,7 +18,13 @@ export default {
     font-size: .555556rem;
     line-height: 1.574074rem;
     color: #ffffff;
-    background: #c9431d;
+   background: -webkit-gradient(
+    linear,
+    100% 0,
+    0 100%,
+    from(#d56815),
+    to(#c32d15)
+  );
     text-align: center;
 }
 </style>

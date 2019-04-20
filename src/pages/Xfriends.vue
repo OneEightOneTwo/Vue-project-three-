@@ -27,7 +27,13 @@ export default {
 .f_top {
   width: 100%;
   height: 1.574074rem;
-  background: #c9431d;
+  background: -webkit-gradient(
+    linear,
+    100% 0,
+    0 100%,
+    from(#d56815),
+    to(#c32d15)
+  );
   font-size: 0.648148rem;
   line-height: 1.574074rem;
   color: #ffffff;

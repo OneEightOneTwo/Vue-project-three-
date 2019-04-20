@@ -152,8 +152,14 @@ export default {
 }
 .p_top {
   width: 100%;
+   background: -webkit-gradient(
+    linear,
+    100% 0,
+    0 100%,
+    from(#d56815),
+    to(#c32d15)
+  );
   height: 1.574074rem;
-  background: #c42f17;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -163,7 +169,7 @@ export default {
   color: #ffffff;
   margin-left: 0.555556rem;
 }
-.p_top {
+.p_top p{
   font-size: 0.518519rem;
   color: #ffffff;
 }
@@ -237,10 +243,11 @@ export default {
   font-family: "微软雅黑";
   width: 100%;
 }
-.cards .tab-card .conent {
+.cards{
+  width: 100%;
   overflow: auto;
   flex: 1;
-  height: 7.907407rem;
+  height: 9.259259rem;
 }
 .cards .tab-card .sect_nav {
   width: 100%;
@@ -336,7 +343,13 @@ export default {
 }
 #warp .footer {
   height: 1.574074rem;
-  background: #ff5846;
+   background: -webkit-gradient(
+    linear,
+    100% 0,
+    0 100%,
+    from(#d56815),
+    to(#c32d15)
+  );
   justify-content: center;
 }
 .footer p {

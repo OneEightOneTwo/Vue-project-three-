@@ -105,8 +105,7 @@ export default {
   },
   watch:{
     pages:function(){
-      // console.log(this.pages[this.temporaryData.currentPage].name);
-      // console.log(this.temporaryData.currentPage);
+      console.log(this.pages[this.temporaryData.currentPage]);
     },
   },
   methods: {
