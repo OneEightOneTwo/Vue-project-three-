@@ -1,7 +1,7 @@
 <template>
   <div>
     <wc-swiper :autoplay="false" class="swiper">
-      <wc-slide v-for="(slide, key) in stkImg" :key="key">
+      <wc-slide v-for="(slide, key) in stkImg" :key="key" @click="cli">
           <img :src="slide" alt srcset class='imgs'>
       </wc-slide>
     </wc-swiper>
@@ -44,6 +44,9 @@ export default {
         return ['#f0cbf7','♀']
       }
     },
+    cli(){
+      this.$router.push({ path: "home/one" });
+    }
   },
 };
 </script>
