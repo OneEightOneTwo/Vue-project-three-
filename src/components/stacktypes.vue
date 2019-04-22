@@ -169,7 +169,7 @@ export default {
       if(this.offsetRatio==0){//判断是否应该跳转(点击无拖拽)
         if (e.type != 'mouseout'){//清除BUG（滑出也触发事件）
           if(this.flag==false){//若鼠标没有点击超级关注则执行
-          this.$router.push(  { path: '/msgdetails',query:{
+          this.$router.push(  { path: '/msgdetails',query:{//用router来跳转到详情页并通过query参数传递数据
             stkImgs:this.pages[this.temporaryData.currentPage].srcs,
             stkName:this.pages[this.temporaryData.currentPage].name,
             stkSex:this.pages[this.temporaryData.currentPage].sex,

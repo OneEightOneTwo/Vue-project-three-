@@ -7,12 +7,14 @@
     </wc-swiper>
     <div id="nameBox">
         <h1 v-text="stkName" class="bigName"></h1>
+        <!-- 输出各种数据 -->
         <div id="msgBox">
           <div class="msgSex" :style="{background:sexColor()[0]}">{{sexColor()[1]}} {{stkAge}}</div>
           <div class="msgStella" v-text="stkStella"></div>
           <div class="mgsLenth"><i class="iconfont icon-shuben"></i> {{stkImg.length}}</div>
           <div class="mgsStu"><i class="iconfont icon-huangguan"></i> 学生</div>
         </div>
+        <!-- 输出所在学校 -->
         <div id="sch" v-text="stkSchool"></div>
     </div>
     
@@ -25,17 +27,17 @@ import wcSwiper from "wc-swiper";
 Vue.use(wcSwiper);
 export default {
   data() {
-    return {
-      stkImg: this.$route.query.stkImgs,
-      stkName: this.$route.query.stkName,
-      stkSex: this.$route.query.stkSex,
-      stkStella: this.$route.query.stkStella,
-      stkAge: this.$route.query.stkAge,
-      stkSchool: this.$route.query.stkSchool,
+    return {//接受从列表页router过来的数据
+      stkImg: this.$route.query.stkImgs,//图片(数组)
+      stkName: this.$route.query.stkName,//姓名
+      stkSex: this.$route.query.stkSex,//性别
+      stkStella: this.$route.query.stkStella,//星座
+      stkAge: this.$route.query.stkAge,//年龄
+      stkSchool: this.$route.query.stkSchool,//所在学校
     };
   },
   methods: {
-    sexColor(){
+    sexColor(){//根据性别来输出颜色代码和数据
       if(this.stkSex=='男'){
         return ['#86b8f3','♂']
       }else{
