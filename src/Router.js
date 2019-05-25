@@ -28,6 +28,10 @@ import msgDetails from './pages/msgDetails.vue'
 import Detail from './pages/Detail.vue'
 // 搜索页面
 import Search from './pages/Search.vue'
+// 手机号码
+import Tellogin from './pages/Tellogin.vue'
+// 账户密码
+import Telpassword from './pages/Telpassword.vue'
 
 //定义路由
 const routes = [
@@ -48,6 +52,10 @@ const routes = [
     { path: '/login', component: Login, name: 'login' },
     { path: '/personal', component: Personal, name: 'personal' },
     { path: '/msgdetails', component: msgDetails, name: 'msgdetails' },
+    { path: '/detail', component: Detail, name: 'detail' },
+    { path: '/search', component: Search, name: 'search' },
+    { path: '/tellogin', component: Tellogin, name: 'tellogin' },
+    { path: '/telpassword', component: Telpassword, name: 'telpassword' },
     { path: '/', redirect: '/home/one' }
 ]
 //实例化路由
