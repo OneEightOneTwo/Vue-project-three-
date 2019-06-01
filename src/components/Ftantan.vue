@@ -14,8 +14,8 @@
       </ul>
 
       <div class="cards">
-        <div class="tab-card" style="display: block;">这里是HTML教程</div>
-        <div class="tab-card">欢迎来到CSS模块</div>
+        <div class="tab-card" style="display: block;"></div>
+        <div class="tab-card"></div>
         <div class="tab-card">嗨，这里是Vue</div>
       </div>
     </div>
