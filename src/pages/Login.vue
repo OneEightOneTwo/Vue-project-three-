@@ -25,7 +25,7 @@
       <a class="wenxin" href="javascript:;">
         <i class="iconfont">&#xe802;</i>微信登录
       </a>
-      <a class="tel" href="javascript:;">手机号登录</a>
+      <a @click="toTel" class="tel" href="javascript:;">手机号登录</a>
     </div>
   </div>
 </template>
@@ -36,9 +36,9 @@ export default {
       timer: null, //定时器
       mark: 0, //比对图片索引的变量
       imgArray: [
-      require("../assets/lunbo.png"),
-      require("../assets/lunbo2.png"),
-      require("../assets/lunbo3.png")
+        require("../assets/lunbo.png"),
+        require("../assets/lunbo2.png"),
+        require("../assets/lunbo3.png")
       ]
     };
   },
@@ -60,6 +60,9 @@ export default {
     },
     move() {
       this.timer = setInterval(this.autoPlay, 4000);
+    },
+    toTel() {
+      this.$router.push({ name: "tellogin" });
     }
   },
   created() {
